@@ -12,6 +12,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
     PageNotFoundComponent,
     ProductsComponent,
     ProductDetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
