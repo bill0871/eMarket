@@ -1,1 +1,96 @@
-<p>signup works!</p>
+<div class="container-md mb-3">
+    <div class="signin-form mb-3">
+        <h1>Create your account</h1>
+    </div>
+
+    <form #signupForm="ngForm" (submit)="signup()">
+        <div class="signin-form" style="padding: 0">
+            <app-alert></app-alert>
+        </div>
+
+        <!-- Common fields -->
+        <div class="signin-form border rounded-lg mb-3">
+            <div class="form-group">
+                <label class="required input-label" for="sign-name">Username</label>
+                <input #nameinput="ngModel" aria-describedby="username" class="form-control" id="sign-name"
+                       name="username" ngModel pattern="[0-9A-z]+" required type="text">
+            </div>
+
+            <div *ngIf="nameinput.touched&&nameinput.invalid" class="form-group">
+                <span *ngIf="nameinput.errors?.required" class="error-info">Username cannot be empty!</span>
+                <span *ngIf="nameinput.errors?.pattern" class="error-info">Username can only include alphanumeric</span>
+            </div>
+
+            <div class="form-group">
+                <label class="required input-label" for="password">Password</label>
+                <input class="form-control" id="password" type="password">
+            </div>
+
+            <div class="form-group">
+                <label class="required input-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email">
+            </div>
+
+            <!-- For buyer -->
+            <div *ngIf="'buyer'===role" class="form-group">
+                <label class="required input-label" for="mobile">Mobile</label>
+                <input class="form-control" id="mobile" type="tel">
+            </div>
+
+            <!-- For seller -->
+            <div *ngIf="'seller'===role">
+
+                <div class="form-group">
+                    <label class="required input-label" for="individual-name">Individual name</label>
+                    <input class="form-control" id="individual-name" type="tel">
+                </div>
+
+                <div class="form-group">
+                    <label class="required input-label" for="company-name">Company name</label>
+                    <input class="form-control" id="company-name" type="tel">
+                </div>
+
+                <div class="form-group">
+                    <label class="required input-label" for="postal-address">Postal address</label>
+                    <input class="form-control" id="postal-address" type="tel">
+                </div>
+
+                <div class="form-group">
+                    <label class="required input-label" for="gstin">GSTIN</label>
+                    <input class="form-control" id="gstin" type="tel">
+                </div>
+
+                <div class="form-group">
+                    <label class="required input-label" for="bank-detail">Bank detail</label>
+                    <input class="form-control" id="bank-detail" type="tel">
+                </div>
+            </div>
+
+            <!-- Role selection radio -->
+            <div class="form-group container form-check">
+                <div class="row">
+                    <div class="col">
+                        <input [(ngModel)]="role" checked="checked" class="form-check-input" id="buyer"
+                               name="role"
+                               type="radio" value="buyer">
+                        <label class="form-check-label" for="buyer">Buyer</label>
+                    </div>
+                    <div class="col">
+                        <input [(ngModel)]="role" class="form-check-input" id="seller" name="role" ngModel
+                               type="radio" value="seller">
+                        <label class="form-check-label" for="seller">Seller</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Create account</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="signin-form border rounded-lg no-account">
+        Already got an account? <a routerLink="/login">Sign in.</a>
+    </div>
+</div>

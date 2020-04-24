@@ -6,11 +6,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isSignin: boolean;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.isSignin = false;
   }
 
 }

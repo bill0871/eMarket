@@ -1,5 +1,4 @@
 import {ProductDetailComponent} from './product-detail/product-detail.component';
-import {ProductsComponent} from './products/products.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
@@ -15,7 +14,6 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'products', component: ProductsComponent},
   {path: 'product-detail/:id', component: ProductDetailComponent},
   {path: '**', component: PageNotFoundComponent}
 ];

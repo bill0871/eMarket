@@ -1,25 +1,24 @@
 <div class="container-md mb-3">
-  <div class="signin-form mb-3">
-    <h1>Sign in to e-Mart</h1>
-  </div>
-  <form>
-    <div class="signin-form border rounded-lg mb-3">
-      <div class="form-group">
-        <label class="input-label" for="username">Username</label>
-        <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
-      </div>
-      <div class="form-group">
-        <label class="input-label" for="password">Password</label>
-        <input type="password" class="form-control" id="password">
-      </div>
-      <!--      <div class="form-group form-check">-->
-      <!--        <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-      <!--        <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-      <!--      </div>-->
-      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    <div class="signin-form mb-3">
+        <h1>Sign in to e-Mart</h1>
     </div>
-  </form>
-  <div class="signin-form border rounded-lg no-account">
-    New to e-Mart? <a href="#">Create account.</a>
-  </div>
+    <form>
+        <div class="signin-form" style="padding: 0">
+            <app-alert></app-alert>
+        </div>
+        <div class="signin-form border rounded-lg mb-3">
+            <div class="form-group">
+                <label class="input-label" for="username">Username</label>
+                <input aria-describedby="emailHelp" class="form-control" id="username" type="text">
+            </div>
+            <div class="form-group">
+                <label class="input-label" for="password">Password</label>
+                <input class="form-control" id="password" type="password">
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        </div>
+    </form>
+    <div class="signin-form border rounded-lg no-account">
+        New to e-Mart? <a routerLink="/signup">Create account.</a>
+    </div>
 </div>
