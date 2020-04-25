@@ -1,38 +1,35 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
-import {SignupComponent} from './signup/signup.component';
-import {HomeComponent} from './home/home.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {ProductDetailComponent} from './product-detail/product-detail.component';
-import {NavbarComponent} from './navbar/navbar.component';
-import {NgbAlertModule, NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
-import {CartComponent} from './cart/cart.component';
-import { AlertComponent } from './login/alert/alert.component';
-import {FormsModule} from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NgbAlertModule, NgbDropdownModule } from "@ng-bootstrap/ng-bootstrap";
+import { CartComponent } from './cart/cart.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SignupComponent,
-    HomeComponent,
-    PageNotFoundComponent,
-    ProductDetailComponent,
-    NavbarComponent,
-    CartComponent,
-    AlertComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbDropdownModule,
-    NgbAlertModule,
-    FormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        SignupComponent,
+        HomeComponent,
+        PageNotFoundComponent,
+        ProductDetailComponent,
+        NavbarComponent,
+        CartComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbDropdownModule,
+        NgbAlertModule,
+        FormsModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
