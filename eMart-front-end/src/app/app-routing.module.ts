@@ -3,7 +3,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-import { SignupComponent } from "./signup/signup.component";
 import { CartComponent } from "./cart/cart.component";
 
 
@@ -12,9 +11,12 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     {
         path: 'login',
-        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+        loadChildren: () => import('./login/login.module').then(l => l.LoginModule)
     },
-    { path: 'signup', component: SignupComponent },
+    {
+        path: 'signup',
+        loadChildren: () => import('./signup/signup.module').then(s => s.SignupModule)
+    },
     { path: 'cart', component: CartComponent },
     { path: 'product-detail/:id', component: ProductDetailComponent },
 
