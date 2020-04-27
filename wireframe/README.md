@@ -1,15 +1,15 @@
 # Screenflow
 
-- [Index](#index)
-- [Login](#login)
-- [Signup](#signup)
-- [List items (Search results)](#list-items-search-results)
-- [Item specifications](#item-specifications)
-- [Cart](#cart)
-- [Purchase history](#purchase-history)
-- [Add item](#add-item)
-- [View inventory](#view-inventory)
-- [Report](#report)
+- [x] [Index](#index)
+- [x] [Login](#login)
+- [x] [Signup](#signup)
+- [ ] [List items (Search results)](#list-items-search-results)
+- [x] [Item specifications](#item-specifications)
+- [ ] [Cart](#cart)
+- [ ] [Purchase history](#purchase-history)
+- [ ] [Add item](#add-item)
+- [ ] [View inventory](#view-inventory)
+- [ ] [Report](#report)
 
 #### Index
 ![index](https://github.com/bill0871/eMart/blob/master/wireframe/Index.png)
