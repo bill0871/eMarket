@@ -1,1 +1,64 @@
-<p>Cart page works</p>
+<div class="contain mb-5">
+    <!-- Outer box -->
+    <div class="row h-100 mx-4">
+        <div class="col-md-12">
+
+            <!-- header -->
+            <div class="row text-md-center font-weight-bold mb-3">
+                <div class="col-md-3">Item</div>
+                <div class="col-md-3">Price</div>
+                <div class="col-md-3">Amount</div>
+                <div class="col-md-3">Operation</div>
+            </div>
+
+            <!-- body -->
+            <div class="row mb-3">
+                <div class="col-md-12">
+
+                    <!-- Loop items -->
+                    <div *ngFor="let order of orders"
+                         class="row my-3 border border-secondary align-items-md-center bg-white"
+                         style="min-height: 100px">
+
+                        <!-- thumbnail & title -->
+                        <div class="col-md-3">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-4">
+                                    <img alt="Mi 10 Pro" class="img-fluid" src="assets/mi10pro.jpg">
+                                </div>
+                                <div class="col-md-8">Mi 10 Pro</div>
+                            </div>
+                        </div>
+
+                        <!-- price -->
+                        <div class="col-md-3 d-md-flex justify-content-md-center">$19</div>
+
+                        <!-- amount -->
+                        <div class="col-md-3 d-md-flex justify-content-md-center">
+
+                        </div>
+
+                        <!-- operation -->
+                        <div class="col-md-3 d-md-flex justify-content-md-center">
+                            <button class="btn btn-sm btn-secondary" type="button">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="row text-md-center align-items-md-center">
+                <div class="col-md-3">Total:</div>
+                <div class="col-md-3">Tax:</div>
+                <div class="col-md-3 d-flex">
+                    Coupon:
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-block btn-primary" type="button">Checkout</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,15 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+    orders = [
+        {
+            name: "aaa"
+        },
+        {
+            name: "aaa"
+        },
+        {
+            name: "aaa"
+        },
+        {
+            name: "aaa"
+        },
+        {
+            name: "aaa"
+        },
+        {
+            name: "aaa"
+        }
+    ];
 
-  ngOnInit(): void {
-  }
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
 
 }

@@ -18,10 +18,10 @@
             <li class="nav-item" ngbDropdown>
                 <a (click)="false" class="nav-link" href ngbDropdownToggle>Dropdown</a>
                 <div ngbDropdownMenu>
-                    <a ngbDropdownItem>Purchase history</a>
-                    <button ngbDropdownItem>Another action</button>
-                    <button ngbDropdownItem>Something else here</button>
-                    <button ngbDropdownItem>Separated link</button>
+                    <a ngbDropdownItem routerLink="/order">My orders</a>
+                    <button ngbDropdownItem routerLink="/add-item">Add item</button>
+                    <button ngbDropdownItem routerLink="/inventory">View inventory</button>
+                    <button ngbDropdownItem routerLink="/report">Report</button>
                 </div>
             </li>
             <li class="nav-item">
