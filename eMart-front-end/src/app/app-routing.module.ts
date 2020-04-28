@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
 import { CartComponent } from "./cart/cart.component";
+import { OrderComponent } from "./order/order.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
         loadChildren: () => import('./signup/signup.module').then(s => s.SignupModule)
     },
     { path: 'cart', component: CartComponent },
+    { path: 'order', component: OrderComponent },
     { path: 'product-detail/:id', component: ProductDetailComponent },
 
 
