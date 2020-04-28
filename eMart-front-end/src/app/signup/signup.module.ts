@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { SignupComponent } from "./signup.component";
-import { RouterModule } from "@angular/router";
-import { signupRoutes } from "./signup.routes";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
@@ -12,7 +10,6 @@ import { CommonModule } from "@angular/common";
     ],
     imports: [
         FormsModule,
-        RouterModule.forChild(signupRoutes),
         CommonModule
     ]
 })
