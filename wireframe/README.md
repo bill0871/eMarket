@@ -8,7 +8,7 @@
 - [x] [Cart](#cart)
 - [x] [Order](#purchase-history)
 - [ ] [Add item](#add-item)
-- [ ] [View inventory](#view-inventory)
+- [x] [View inventory](#view-inventory)
 - [ ] [Report](#report)
 
 #### Index
