@@ -12,5 +12,5 @@ const orderRoutes: Routes = [
         RouterModule.forChild(orderRoutes)
     ]
 })
-export class orderRoutingModule {
+export class OrderRoutingModule {
 }

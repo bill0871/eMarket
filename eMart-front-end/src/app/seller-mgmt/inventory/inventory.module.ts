@@ -6,10 +6,11 @@ import { InventoryComponent } from './inventory.component';
 
 
 @NgModule({
-  declarations: [InventoryComponent],
-  imports: [
-    CommonModule,
-    InventoryRoutingModule
-  ]
+    declarations: [InventoryComponent],
+    imports: [
+        CommonModule,
+        InventoryRoutingModule
+    ]
 })
-export class InventoryModule { }
+export class InventoryModule {
+}
