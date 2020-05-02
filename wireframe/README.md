@@ -9,7 +9,7 @@
 - [x] [Order](#purchase-history)
 - [x] [Add item](#add-item)
 - [x] [View inventory](#view-inventory)
-- [ ] [Report](#report)
+- [x] [Report](#report)
 
 #### Index
 ![index](https://github.com/bill0871/eMart/blob/master/wireframe/Index.png)
