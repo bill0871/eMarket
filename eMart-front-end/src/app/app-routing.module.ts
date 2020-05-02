@@ -34,6 +34,10 @@ const routes: Routes = [
         path: 'report',
         loadChildren: () => import('./seller-mgmt/report/report.module').then(r => r.ReportModule)
     },
+    {
+        path: 'list-items',
+        loadChildren: () => import('./list-items/list-items-routing.module').then(l => l.ListItemsRoutingModule)
+    },
 
     { path: 'cart', component: CartComponent },
     { path: 'product-detail/:id', component: ProductDetailComponent },

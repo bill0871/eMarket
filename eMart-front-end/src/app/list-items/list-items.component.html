@@ -1,0 +1,57 @@
+<div class="contain mb-5">
+    <div class="row d-flex flex-column">
+
+        <!-- Filter -->
+        <div class="col-12 mb-5">
+            <div class="row border border-info rounded-lg align-items-center" style="min-height: 80px">
+                <div class="col-2">
+                    Filter:
+                </div>
+
+                <div class="col-3">
+                    Price:
+                    <input class="w-25" type="text">
+                    -
+                    <input class="w-25" type="text">
+                </div>
+
+                <div class="col-3">
+                    <div class="row">
+                        <div>Manufacture:</div>
+                        <div class="col-6 d-flex justify-content-center">
+                            <select id="brand" name="brand">
+                                <option value="Apple">Apple</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Apple">Apple</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-1"></div>
+
+                <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-block btn-primary" type="button">Filter</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- List -->
+        <div class="col-12">
+            <div class="row">
+                <div *ngFor="let product of product_list" class="col-sm-3 mb-3">
+                    <div class="card h-100 anim">
+                        <img alt="Mi 10 Pro" class="card-img-top" src="assets/mi10pro.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-text font-weight-bold text-primary">{{product.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
