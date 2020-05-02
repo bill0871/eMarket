@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from "../services/products.service";
 
 @Component({
     selector: 'app-list-items',
@@ -7,103 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListItemsComponent implements OnInit {
 
-    product_list = [
-        {
-            id: "ABC8441189035",
-            name: "Tshirt",
-            price: 299.99
-        },
-        {
-            id: "DEF6510463347",
-            name: "Shoes",
-            price: 299.99
-        },
-        {
-            id: "GHI0831819467",
-            name: "Handbags",
-            price: 299.99
-        },
-        {
-            id: "ABC8441189035",
-            name: "Tshirt",
-            price: 299.99
-        },
-        {
-            id: "DEF6510463347",
-            name: "Shoes",
-            price: 299.99
-        },
-        {
-            id: "GHI0831819467",
-            name: "Handbags",
-            price: 299.99
-        },
-        {
-            id: "ABC8441189035",
-            name: "Tshirt",
-            price: 299.99
-        },
-        {
-            id: "DEF6510463347",
-            name: "Shoes",
-            price: 299.99
-        },
-        {
-            id: "GHI0831819467",
-            name: "Handbags",
-            price: 299.99
-        },
-        {
-            id: "ABC8441189035",
-            name: "Tshirt",
-            price: 299.99
-        },
-        {
-            id: "DEF6510463347",
-            name: "Shoes",
-            price: 299.99
-        },
-        {
-            id: "GHI0831819467",
-            name: "Handbags",
-            price: 299.99
-        },
-        {
-            id: "ABC8441189035",
-            name: "Tshirt",
-            price: 299.99
-        },
-        {
-            id: "DEF6510463347",
-            name: "Shoes",
-            price: 299.99
-        },
-        {
-            id: "GHI0831819467",
-            name: "Handbags",
-            price: 299.99
-        },
-        {
-            id: "ABC8441189035",
-            name: "Tshirt",
-            price: 299.99
-        },
-        {
-            id: "DEF6510463347",
-            name: "Shoes",
-            price: 299.99
-        },
-        {
-            id: "GHI0831819467",
-            name: "Handbags",
-            price: 299.99
-        }
-    ]
+    products;
 
-    constructor() {
+    constructor(private productsService: ProductsService) {
     }
 
     ngOnInit(): void {
+        this.products = this.searchProducts();
     }
 
+    searchProducts(): any {
+        return this.productsService.getProducts();
+    }
 }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ListItemsRoutingModule } from './list-items-routing.module';
 import { ListItemsComponent } from './list-items.component';
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -10,8 +10,8 @@ import { ListItemsComponent } from './list-items.component';
         ListItemsComponent
     ],
     imports: [
-        CommonModule,
-        ListItemsRoutingModule
+        ListItemsRoutingModule,
+        CommonModule
     ]
 })
 export class ListItemsModule {
