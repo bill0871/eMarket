@@ -1,0 +1,41 @@
+<div class="container mb-3">
+
+    <!-- Outer -->
+    <div class="row h-100 mx-4 p-4">
+        <div class="col-sm-12">
+
+            <!-- Title -->
+            <div class="row mb-3">
+                <div class="col-sm-12 d-sm-flex h3 justify-content-sm-center">
+                    Report
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="row mb-5">
+                <div class="col-sm-12 d-sm-flex justify-content-sm-center">
+                    <div [options]="options" class="h-25 w-100" echarts></div>
+                </div>
+            </div>
+
+            <!-- Time period-->
+            <div class="row">
+                <div class="col-sm-6 d-sm-flex justify-content-sm-center">
+                    <label for="period">Select time period</label>
+                </div>
+                <div class="col-sm-6 d-sm-flex justify-content-sm-center">
+                    <select id="period" name="period" style="min-width: 150px">
+                        <option value="1 month">Last 1 month</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Bottom btn -->
+            <div class="row mt-3">
+                <div class="col-sm-12 d-sm-flex justify-content-sm-center">
+                    <button class="btn btn-lg btn-primary" style="min-width: 150px" type="submit">Check</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

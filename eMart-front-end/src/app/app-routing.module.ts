@@ -30,6 +30,10 @@ const routes: Routes = [
         path: 'item-adding',
         loadChildren: () => import('./seller-mgmt/item-adding/item-adding.module').then(ia => ia.ItemAddingModule)
     },
+    {
+        path: 'report',
+        loadChildren: () => import('./seller-mgmt/report/report.module').then(r => r.ReportModule)
+    },
 
     { path: 'cart', component: CartComponent },
     { path: 'product-detail/:id', component: ProductDetailComponent },
