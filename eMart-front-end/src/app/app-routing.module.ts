@@ -26,6 +26,10 @@ const routes: Routes = [
         path: 'inventory',
         loadChildren: () => import('./seller-mgmt/inventory/inventory.module').then(i => i.InventoryModule)
     },
+    {
+        path: 'item-adding',
+        loadChildren: () => import('./seller-mgmt/item-adding/item-adding.module').then(ia => ia.ItemAddingModule)
+    },
 
     { path: 'cart', component: CartComponent },
     { path: 'product-detail/:id', component: ProductDetailComponent },
