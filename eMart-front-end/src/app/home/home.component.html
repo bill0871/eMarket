@@ -1,13 +1,15 @@
-<div class="row">
-    <div *ngFor="let products of products" class="col-sm-3 mb-3">
-        <a [routerLink]="['/product-detail/', products.id]" class="text-reset text-decoration-none">
-            <div class="card h-100 anim">
-                <img alt="Mi 10 Pro" class="card-img-top" src="assets/mi10pro.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">{{products.name}}</h5>
-                    <p class="card-text font-weight-bold text-primary">{{products.price | currency}}</p>
+<div class="contain mb-5">
+    <div class="row">
+        <div *ngFor="let product of products" class="col-sm-3 mb-3">
+            <a [routerLink]="['/product-detail/', product.id]" class="text-reset text-decoration-none">
+                <div class="card h-100 anim">
+                    <img alt="Mi 10 Pro" class="card-img-top" src="assets/mi10pro.jpg">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text font-weight-bold text-primary">{{product.price | currency}}</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
