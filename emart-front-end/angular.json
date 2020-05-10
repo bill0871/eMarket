@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eMart-fron-end": {
+    "emart-front-end": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eMart-fron-end",
+            "outputPath": "dist/emart-front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,14 +66,14 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "eMart-fron-end:build:production"
+              "browserTarget": "emart-front-end:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eMart-fron-end:build"
+            "browserTarget": "emart-front-end:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "eMart-fron-end:serve"
+            "devServerTarget": "emart-front-end:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "eMart-fron-end:serve:production"
+              "devServerTarget": "emart-front-end:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "eMart-fron-end"
+  "defaultProject": "emart-front-end"
 }
