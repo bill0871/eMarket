@@ -13,6 +13,10 @@
     </build>
     <dependencies>
         <dependency>
+            <artifactId>spring-boot-starter</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <groupId>org.springframework.boot</groupId>
         </dependency>
@@ -57,7 +61,11 @@
     <description>eMart</description>
     <groupId>com.fsd</groupId>
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>user-service</module>
+    </modules>
     <name>emart-back-end</name>
+
     <packaging>pom</packaging>
 
     <parent>

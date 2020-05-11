@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>user-service</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <artifactId>mysql-connector-java</artifactId>
+            <groupId>mysql</groupId>
+            <version>5.1.48</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    <description>user service</description>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>user-service</name>
+
+    <parent>
+        <artifactId>emart-back-end</artifactId>
+        <groupId>com.fsd</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <version>0.0.1-SNAPSHOT</version>
+
+</project>

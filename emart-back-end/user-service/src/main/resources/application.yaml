@@ -1,0 +1,12 @@
+#debug: true
+server:
+    port: 8901
+
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/emart?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: root
+    jpa:
+        show-sql: true
