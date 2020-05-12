@@ -43,5 +43,15 @@ public class UserController {
         return sellerSignUpService.signUp(seller);
     }
 
+    @PostMapping("/signInBuyer")
+    public Buyer signInBuyer(@RequestBody Buyer buyer) {
+        return buyerSignInService.signIn(buyer);
+    }
+
+    @PostMapping("/signInSeller")
+    public Seller signInSeller(@RequestBody Seller seller) {
+        log.info(seller.toString());
+        return sellerSignInService.signIn(seller);
+    }
 
 }

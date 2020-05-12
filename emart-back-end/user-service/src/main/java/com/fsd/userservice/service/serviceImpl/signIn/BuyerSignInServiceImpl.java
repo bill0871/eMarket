@@ -18,6 +18,18 @@ public class BuyerSignInServiceImpl implements SignInService<Buyer> {
 
     @Override
     public Buyer signIn(Buyer user) {
-        return buyerSignInDao.save(user);
+        String username = user.getUsername();
+        Buyer buyer = buyerSignInDao.findByUsername(username);
+        if (buyer != null) {
+            String password = buyer.getPassword();
+            String inputPassword = user.getPassword();
+            if (password.equals(inputPassword)) {
+                return buyer;
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
     }
 }
