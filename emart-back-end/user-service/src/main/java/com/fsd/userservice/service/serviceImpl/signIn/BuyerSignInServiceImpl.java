@@ -4,6 +4,7 @@ import com.fsd.userservice.dao.BuyerSignInDao;
 import com.fsd.userservice.entity.Buyer;
 import com.fsd.userservice.service.SignInService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -12,6 +13,7 @@ public class BuyerSignInServiceImpl implements SignInService<Buyer> {
 
     private final BuyerSignInDao buyerSignInDao;
 
+    @Autowired
     public BuyerSignInServiceImpl(BuyerSignInDao buyerSignInDao) {
         this.buyerSignInDao = buyerSignInDao;
     }

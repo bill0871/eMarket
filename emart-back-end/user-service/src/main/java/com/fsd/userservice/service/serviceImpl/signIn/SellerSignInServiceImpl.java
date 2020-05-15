@@ -18,6 +18,18 @@ public class SellerSignInServiceImpl implements SignInService<Seller> {
 
     @Override
     public Seller signIn(Seller user) {
-        return sellerSignInDao.save(user);
+        String username = user.getUsername();
+        Seller seller = sellerSignInDao.findByUsername(username);
+        if (seller != null) {
+            String password = seller.getPassword();
+            String inputPassword = user.getPassword();
+            if (password.equals(inputPassword)) {
+                return seller;
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
     }
 }

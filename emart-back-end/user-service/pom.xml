@@ -12,6 +12,27 @@
         </plugins>
     </build>
 
+    <dependencies>
+        <!-- jwt -->
+        <dependency>
+            <artifactId>jjwt-api</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <version>0.11.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>jjwt-impl</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <scope>runtime</scope>
+            <version>0.11.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>jjwt-jackson</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <scope>runtime</scope>
+            <version>0.11.1</version>
+        </dependency>
+    </dependencies>
+
     <description>user service</description>
     <modelVersion>4.0.0</modelVersion>
     <name>user-service</name>
