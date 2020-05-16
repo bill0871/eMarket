@@ -32,4 +32,9 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> findAll() {
         return itemDao.findAll();
     }
+
+    @Override
+    public List<Item> findByName(String name) {
+        return itemDao.findItemsByName(name);
+    }
 }

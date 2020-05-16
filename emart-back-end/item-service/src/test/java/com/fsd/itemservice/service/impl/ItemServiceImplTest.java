@@ -28,16 +28,25 @@ class ItemServiceImplTest {
     @Test
     @Order(1)
     void save() {
-        Item item = new Item();
-        item.setName("Mi 10 Pro");
-        item.setPrice(BigDecimal.valueOf(299.99));
-        item.setCategoryId(1);
-        item.setSubcategoryId(1);
-        item.setStockNumber(1888);
+        Item item1 = new Item();
+        item1.setName("Mi 10 Pro");
+        item1.setPrice(BigDecimal.valueOf(299.99));
+        item1.setCategoryId(1);
+        item1.setSubcategoryId(1);
+        item1.setStockNumber(1888);
 
-        Item result = itemService.save(item);
+        Item item2 = new Item();
+        item2.setName("Mi 10 Pro");
+        item2.setPrice(BigDecimal.valueOf(299.99));
+        item2.setCategoryId(1);
+        item2.setSubcategoryId(1);
+        item2.setStockNumber(1888);
 
-        assertEquals(item, result);
+        Item result1 = itemService.save(item1);
+        Item result2 = itemService.save(item2);
+
+        assertEquals(item1, result1);
+        assertEquals(item2, result2);
 
     }
 
@@ -52,6 +61,14 @@ class ItemServiceImplTest {
     @Order(3)
     void findAll() {
         List<Item> items = itemService.findAll();
-        assertEquals(1, items.size());
+        assertEquals(2, items.size());
+    }
+
+
+    @Test
+    @Order(4)
+    void findByName() {
+        List<Item> items = itemService.findByName("Mi 10 Pro");
+        assertEquals(2, items.size());
     }
 }

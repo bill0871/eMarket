@@ -11,4 +11,6 @@ public interface ItemService {
     Optional<Item> findById(Integer id);
 
     List<Item> findAll();
+
+    List<Item> findByName(String name);
 }
