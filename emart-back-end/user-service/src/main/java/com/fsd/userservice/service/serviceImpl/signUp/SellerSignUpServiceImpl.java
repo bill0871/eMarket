@@ -5,6 +5,7 @@ import com.fsd.userservice.entity.Seller;
 import com.fsd.userservice.service.SignUpService;
 import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -14,6 +15,7 @@ public class SellerSignUpServiceImpl implements SignUpService<Seller> {
 
     private final SellerSignUpDao sellerSignUpDao;
 
+    @Autowired
     public SellerSignUpServiceImpl(SellerSignUpDao sellerSignUpDao) {
         this.sellerSignUpDao = sellerSignUpDao;
     }
@@ -22,7 +24,6 @@ public class SellerSignUpServiceImpl implements SignUpService<Seller> {
     @Override
     public Seller signUp(Seller user) {
         user.setCreateTime(new Date());
-        sellerSignUpDao.save(user);
-        return null;
+        return sellerSignUpDao.save(user);
     }
 }

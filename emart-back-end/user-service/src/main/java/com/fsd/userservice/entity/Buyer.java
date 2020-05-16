@@ -22,6 +22,7 @@ public class Buyer implements Serializable {
     @Column(name = "id", insertable = false)
     private Integer id;
 
+    @Column(unique = true)
     private String username;
 
     private String password;

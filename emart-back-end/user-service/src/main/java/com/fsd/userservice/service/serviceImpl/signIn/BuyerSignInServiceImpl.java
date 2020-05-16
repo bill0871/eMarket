@@ -3,6 +3,7 @@ package com.fsd.userservice.service.serviceImpl.signIn;
 import com.fsd.userservice.dao.BuyerSignInDao;
 import com.fsd.userservice.entity.Buyer;
 import com.fsd.userservice.service.SignInService;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,17 +22,13 @@ public class BuyerSignInServiceImpl implements SignInService<Buyer> {
     @Override
     public Buyer signIn(Buyer user) {
         String username = user.getUsername();
-        Buyer buyer = buyerSignInDao.findByUsername(username);
-        if (buyer != null) {
-            String password = buyer.getPassword();
-            String inputPassword = user.getPassword();
-            if (password.equals(inputPassword)) {
-                return buyer;
-            } else {
-                return null;
-            }
-        } else {
-            return null;
-        }
+        Optional<Buyer> buyer = buyerSignInDao.findByUsername(username);
+
+        return buyer.map(b -> {
+            String password = b.getPassword();
+            String password1 = user.getPassword();
+            return password.equals(password1) ? b : null;
+        }).orElse(null);
+
     }
 }

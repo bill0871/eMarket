@@ -1,6 +1,9 @@
 package com.fsd.userservice.service.serviceImpl.signUp;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.fsd.userservice.entity.Buyer;
+import com.fsd.userservice.entity.Seller;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,19 +13,20 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-class BuyerSignUpServiceImplTest {
+class SellerSignUpServiceImplTest {
 
     @Autowired
-    private BuyerSignUpServiceImpl buyerSignUpService;
+    private SellerSignUpServiceImpl sellerSignUpService;
 
     @Test
     void signUp() {
-        Buyer buyer = new Buyer();
-        buyer.setUsername("zxc");
-        buyer.setPassword("aaabbccc");
-        buyer.setMobile("18293029182");
-        Buyer buyer1 = buyerSignUpService.signUp(buyer);
+        Seller seller = new Seller();
+        seller.setUsername("crazy");
+        seller.setPassword("aaa");
+        seller.setEmail("ccc@bcd.com");
+        Seller seller1 = sellerSignUpService.signUp(seller);
 
-        Assertions.assertEquals(buyer, buyer1);
+        Assertions.assertEquals(seller, seller1);
+
     }
 }
