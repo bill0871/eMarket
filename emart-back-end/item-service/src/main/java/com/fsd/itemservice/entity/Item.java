@@ -1,4 +1,4 @@
-package com.fsd.userservice.entity;
+package com.fsd.itemservice.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -13,11 +13,11 @@ import lombok.Data;
 @Entity
 public class Item implements Serializable {
 
-    private static final long serialVersionUID = -38410860949555566L;
+    private static final long serialVersionUID = 3680287402831641457L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false)
+    @Column(insertable = false, unique = true)
     private Integer id;
 
     private Integer categoryId;

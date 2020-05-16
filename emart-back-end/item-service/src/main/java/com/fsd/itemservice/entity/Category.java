@@ -1,4 +1,4 @@
-package com.fsd.userservice.entity;
+package com.fsd.itemservice.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Data;
-
 
 @Data
 @Entity(name = "category")
