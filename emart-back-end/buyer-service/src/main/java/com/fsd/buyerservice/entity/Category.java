@@ -1,4 +1,4 @@
-package com.fsd.itemservice.entity;
+package com.fsd.buyerservice.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;
