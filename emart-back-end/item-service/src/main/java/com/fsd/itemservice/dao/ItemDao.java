@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ItemDao extends JpaRepository<Item, Integer> {
 
-    List<Item> findItemsByName(String name);
+    List<Item> findItemsByNameLike(String name);
 }

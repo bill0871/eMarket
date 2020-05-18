@@ -1,6 +1,7 @@
 package com.fsd.buyerservice.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Cart implements Serializable {
+public class CartItem implements Serializable {
 
     private static final long serialVersionUID = -4588400883857900637L;
 
@@ -21,11 +22,9 @@ public class Cart implements Serializable {
     @Column(insertable = false, unique = true)
     private Integer id;
 
-    @OneToOne
-    @JoinColumn(name = "item_id", referencedColumnName = "id")
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(referencedColumnName = "id", unique = true)
     private Item item;
-
-    private String name;
 
     private Integer quantity;
 

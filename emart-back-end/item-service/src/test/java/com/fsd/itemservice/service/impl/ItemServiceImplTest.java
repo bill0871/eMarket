@@ -68,7 +68,7 @@ class ItemServiceImplTest {
     @Test
     @Order(4)
     void findByName() {
-        List<Item> items = itemService.findByName("Mi 10 Pro");
+        List<Item> items = itemService.findByName("Mi 10");
         assertEquals(2, items.size());
     }
 }
