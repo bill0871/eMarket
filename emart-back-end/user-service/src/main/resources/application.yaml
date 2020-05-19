@@ -12,5 +12,3 @@ spring:
         password: root
     jpa:
         show-sql: true
-        hibernate:
-            ddl-auto: update
