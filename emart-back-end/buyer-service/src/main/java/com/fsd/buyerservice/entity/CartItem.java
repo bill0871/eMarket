@@ -22,9 +22,9 @@ public class CartItem implements Serializable {
     @Column(insertable = false, unique = true)
     private Integer id;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(referencedColumnName = "id", unique = true)
-    private Item item;
+    private Integer itemId;
+
+    private Integer userId;
 
     private Integer quantity;
 

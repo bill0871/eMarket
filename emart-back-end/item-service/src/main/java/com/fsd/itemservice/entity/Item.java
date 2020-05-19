@@ -17,7 +17,7 @@ public class Item implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, unique = true)
+    @Column(unique = true)
     private Integer id;
 
     private Integer categoryId;

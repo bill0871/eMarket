@@ -29,8 +29,8 @@ public class BuyerController {
     }
 
     @PostMapping("/addToCart")
-    public CartItem addToCart(@RequestBody Item item) {
-        return buyerService.addToCart(item);
+    public CartItem addToCart(@RequestBody Item item, Integer userId) {
+        return buyerService.addToCart(item, userId);
     }
 
 }

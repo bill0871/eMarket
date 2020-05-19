@@ -8,5 +8,5 @@ public interface BuyerService {
 
     List<Item> searchItems(String name);
 
-    CartItem addToCart(Item item);
+    CartItem addToCart(Item item, Integer userId);
 }

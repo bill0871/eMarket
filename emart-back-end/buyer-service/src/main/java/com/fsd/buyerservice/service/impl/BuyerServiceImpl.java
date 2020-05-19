@@ -35,27 +35,24 @@ public class BuyerServiceImpl implements BuyerService {
     }
 
     @Override
-    public CartItem addToCart(Item item) {
+    public CartItem addToCart(Item item, Integer userId) {
 
-        // 1. check whether the specific item exist in cart
-        // 2. if exist
-        //      select that one, qty + 1
-        //    if not exist
-        //      add one in cart set qty = 1
-
-        // TODO Exception:save the transient instance before flushing!!!
-        Optional<CartItem> optionalCartItem = cartDao.findByItem(item);
+        // 1. check whether the record of specific item associate with specific user exist in cart
+        Optional<CartItem> optionalCartItem =
+                cartDao.findCartItemByItemIdAndUserId(item.getId(), userId);
         CartItem cartItem;
+
         if (optionalCartItem.isPresent()) {
+            // if exist, select that one, qty + 1
             cartItem = optionalCartItem.get();
             cartItem.setQuantity(cartItem.getQuantity() + 1);
         } else {
+            // if not exist, add one record in cart, set qty = 1
             cartItem = new CartItem();
-            cartItem.setItem(item);
+            cartItem.setItemId(item.getId());
+            cartItem.setUserId(userId);
             cartItem.setQuantity(1);
         }
-        cartDao.save(cartItem);
-
-        return null;
+        return cartDao.save(cartItem);
     }
 }
