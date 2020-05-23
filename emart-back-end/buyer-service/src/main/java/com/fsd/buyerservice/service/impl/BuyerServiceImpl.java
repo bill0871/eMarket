@@ -55,4 +55,9 @@ public class BuyerServiceImpl implements BuyerService {
         }
         return cartDao.save(cartItem);
     }
+
+    @Override
+    public void deleteFromCart(CartItem cartItem) {
+        cartDao.delete(cartItem);
+    }
 }

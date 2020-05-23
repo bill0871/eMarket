@@ -9,4 +9,6 @@ public interface BuyerService {
     List<Item> searchItems(String name);
 
     CartItem addToCart(Item item, Integer userId);
+
+    void deleteFromCart(CartItem cartItem);
 }

@@ -33,4 +33,9 @@ public class BuyerController {
         return buyerService.addToCart(item, userId);
     }
 
+    @PostMapping("/deleteFromCart")
+    public void deleteFromCart(@RequestBody CartItem cartItem) {
+        buyerService.deleteFromCart(cartItem);
+    }
+
 }
