@@ -72,6 +72,7 @@
         <module>user-service</module>
         <module>buyer-service</module>
         <module>item-service</module>
+        <module>seller-service</module>
     </modules>
     <name>emart-back-end</name>
 
