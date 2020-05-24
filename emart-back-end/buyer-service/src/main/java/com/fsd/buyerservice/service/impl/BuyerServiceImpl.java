@@ -1,14 +1,21 @@
 package com.fsd.buyerservice.service.impl;
 
 import com.fsd.buyerservice.dao.CartDao;
+import com.fsd.buyerservice.dao.PurchaseHistoryDao;
 import com.fsd.buyerservice.entity.CartItem;
 import com.fsd.buyerservice.entity.Item;
+import com.fsd.buyerservice.entity.PurchaseHistory;
 import com.fsd.buyerservice.service.BuyerService;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClient.Builder;
 import reactor.core.publisher.Flux;
 
 @Service
@@ -17,11 +24,15 @@ public class BuyerServiceImpl implements BuyerService {
     public static final String ITEM_SERVICE_HOST = "http://localhost:8903";
     private final WebClient webClient;
     private final CartDao cartDao;
+    private final PurchaseHistoryDao purchaseHistoryDao;
 
     @Autowired
-    public BuyerServiceImpl(WebClient.Builder builder, CartDao cartDao) {
+    public BuyerServiceImpl(Builder builder, CartDao cartDao,
+            PurchaseHistoryDao purchaseHistoryDao) {
+
         this.webClient = builder.baseUrl(ITEM_SERVICE_HOST).build();
         this.cartDao = cartDao;
+        this.purchaseHistoryDao = purchaseHistoryDao;
     }
 
     @Override
@@ -59,5 +70,31 @@ public class BuyerServiceImpl implements BuyerService {
     @Override
     public void deleteFromCart(CartItem cartItem) {
         cartDao.delete(cartItem);
+    }
+
+    @Override
+    public List<PurchaseHistory> checkout(List<CartItem> cartItems) {
+        Flux<Item> itemFlux = webClient.get()
+                .uri("/item/")
+                .retrieve()
+                .bodyToFlux(Item.class);
+        List<Item> items = itemFlux.collectList().block();
+        ArrayList<PurchaseHistory> list = new ArrayList<>();
+        if (items != null) {
+            Map<Integer, Integer> itemSellerIdMap = items.stream()
+                    .collect(Collectors.toMap(Item::getId, Item::getSellerId));
+            cartItems.forEach(cartItem -> {
+                PurchaseHistory purchaseHistory = new PurchaseHistory();
+                purchaseHistory.setBuyerId(cartItem.getUserId());
+                purchaseHistory.setSellerId(itemSellerIdMap.get(cartItem.getItemId()));
+                purchaseHistory.setItemId(cartItem.getItemId());
+                purchaseHistory.setNumberOfItems(cartItem.getQuantity());
+                purchaseHistory.setCreateDate(new Date());
+
+                list.add(purchaseHistory);
+            });
+        }
+
+        return purchaseHistoryDao.saveAll(list);
     }
 }

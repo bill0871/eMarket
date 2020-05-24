@@ -40,7 +40,7 @@ public class ItemController {
     }
 
     @GetMapping("/search/{name}")
-    public List<Item> searchItems(@PathVariable String name) {
+    public List<Item> searchItemsByName(@PathVariable String name) {
         return itemService.findByName(name);
     }
 }

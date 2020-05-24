@@ -20,6 +20,8 @@ public class Item implements Serializable {
     @Column(unique = true)
     private Integer id;
 
+    private Integer sellerId;
+
     private Integer categoryId;
 
     private Integer subcategoryId;

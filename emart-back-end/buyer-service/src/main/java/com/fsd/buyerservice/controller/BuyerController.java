@@ -2,6 +2,7 @@ package com.fsd.buyerservice.controller;
 
 import com.fsd.buyerservice.entity.CartItem;
 import com.fsd.buyerservice.entity.Item;
+import com.fsd.buyerservice.entity.PurchaseHistory;
 import com.fsd.buyerservice.service.BuyerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,11 @@ public class BuyerController {
     @PostMapping("/deleteFromCart")
     public void deleteFromCart(@RequestBody CartItem cartItem) {
         buyerService.deleteFromCart(cartItem);
+    }
+
+    @PostMapping("/checkout")
+    public List<PurchaseHistory> checkout(@RequestBody List<CartItem> cartItems) {
+        return buyerService.checkout(cartItems);
     }
 
 }
