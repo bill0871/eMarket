@@ -6,9 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NgbAlertModule, NgbDropdownModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbAlertModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from "@angular/forms";
         NgbDropdownModule,
         NgbAlertModule,
         FormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
