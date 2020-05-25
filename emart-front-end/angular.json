@@ -62,7 +62,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "eMart-fron-end:build"
+            "browserTarget": "emart-front-end:build"
           },
           "configurations": {
             "production": {
