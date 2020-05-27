@@ -32,7 +32,10 @@
             <artifactId>spring-boot-starter-security</artifactId>
             <groupId>org.springframework.boot</groupId>
         </dependency>
-
+        <dependency>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+        </dependency>
         <dependency>
             <artifactId>spring-boot-devtools</artifactId>
             <groupId>org.springframework.boot</groupId>
@@ -68,6 +71,17 @@
         </dependency>
 
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <groupId>org.springframework.cloud</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>Greenwich.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <description>eMart</description>
     <groupId>com.fsd</groupId>
