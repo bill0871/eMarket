@@ -11,13 +11,14 @@
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
-            <artifactId>spring-boot-starter</artifactId>
-            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>org.springframework.cloud</groupId>
         </dependency>
         <dependency>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
             <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
@@ -31,10 +32,6 @@
         <dependency>
             <artifactId>spring-boot-starter-security</artifactId>
             <groupId>org.springframework.boot</groupId>
-        </dependency>
-        <dependency>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <groupId>org.springframework.cloud</groupId>
         </dependency>
         <dependency>
             <artifactId>spring-boot-devtools</artifactId>
@@ -69,8 +66,8 @@
             <scope>runtime</scope>
             <version>5.1.48</version>
         </dependency>
-
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -78,7 +75,7 @@
                 <groupId>org.springframework.cloud</groupId>
                 <scope>import</scope>
                 <type>pom</type>
-                <version>Greenwich.RELEASE</version>
+                <version>Hoxton.SR4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -91,6 +88,7 @@
         <module>buyer-service</module>
         <module>item-service</module>
         <module>seller-service</module>
+        <module>eureka-server</module>
     </modules>
     <name>emart-back-end</name>
 
@@ -101,7 +99,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
         <relativePath/>
-        <version>2.2.7.RELEASE</version>
+        <version>2.3.0.RELEASE</version>
     </parent>
 
     <properties>

@@ -12,6 +12,14 @@
         </plugins>
     </build>
 
+    <dependencies>
+        <dependency>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+        </dependency>
+
+    </dependencies>
+
     <description>Seller service</description>
     <modelVersion>4.0.0</modelVersion>
     <name>seller-service</name>

@@ -1,7 +1,11 @@
 server:
     port: 8904
+    servlet:
+        context-path: /item
 
 spring:
+    application:
+        name: seller-service
     main:
         banner-mode: off
     datasource:
@@ -11,3 +15,8 @@ spring:
         password: root
     jpa:
         show-sql: true
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8900/eureka/eureka

@@ -31,6 +31,16 @@
             <scope>runtime</scope>
             <version>0.11.1</version>
         </dependency>
+
+        <dependency>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+        </dependency>
+
     </dependencies>
 
     <description>user service</description>

@@ -1,8 +1,12 @@
 #debug: true
 server:
     port: 8903
+    servlet:
+        context-path: /item
 
 spring:
+    application:
+        name: item-service
     main:
         banner-mode: off
     datasource:
@@ -13,3 +17,8 @@ spring:
     jpa:
         show-sql: true
 
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8900/eureka/eureka
+        fetch-registry: true

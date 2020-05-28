@@ -6,6 +6,8 @@ import com.fsd.buyerservice.entity.PurchaseHistory;
 import com.fsd.buyerservice.service.BuyerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,8 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@EnableEurekaClient
+@EnableFeignClients
 @RestController
-@RequestMapping("/buyer")
 public class BuyerController {
 
     private final BuyerService buyerService;

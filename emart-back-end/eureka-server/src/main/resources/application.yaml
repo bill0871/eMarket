@@ -1,1 +1,21 @@
+server:
+    port: 8900
+    servlet:
+        context-path: /eureka
+spring:
+    main:
+        banner-mode: off
+    application:
+        name: eureka-server
 
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+#        service-url:
+#            defaultZone:  http://localhost:8900/eureka # 如果关闭了eureka的自注册功能，此处的service地址 可以不填
+    instance:
+        hostname: localhost
+    server:
+        enable-self-preservation: false
+        eviction-interval-timer-in-ms: 60000 #剔除服务的间隔时间（毫秒)
