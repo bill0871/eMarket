@@ -22,14 +22,6 @@
             <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <groupId>org.springframework.boot</groupId>
-        </dependency>
-        <dependency>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-            <groupId>org.springframework.boot</groupId>
-        </dependency>
-        <dependency>
             <artifactId>spring-boot-starter-security</artifactId>
             <groupId>org.springframework.boot</groupId>
         </dependency>
@@ -60,12 +52,6 @@
             <groupId>io.projectreactor</groupId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <artifactId>mysql-connector-java</artifactId>
-            <groupId>mysql</groupId>
-            <scope>runtime</scope>
-            <version>5.1.48</version>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -89,6 +75,7 @@
         <module>item-service</module>
         <module>seller-service</module>
         <module>eureka-server</module>
+        <module>api-gateway</module>
     </modules>
     <name>emart-back-end</name>
 

@@ -1,0 +1,20 @@
+server:
+    port: 8080
+spring:
+    main:
+        banner-mode: off
+    application:
+        name: api-gateway
+    cloud:
+        gateway:
+            routes:
+                -   id: gateway-service
+                    uri: https://www.baidu.com
+                    predicates:
+                        - Path=/hello
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8900/eureka/eureka
+        fetch-registry: true
