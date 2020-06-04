@@ -1,5 +1,6 @@
 package com.fsd.buyerservice.service.impl;
 
+import com.fsd.buyerservice.client.ItemClient;
 import com.fsd.buyerservice.dao.CartDao;
 import com.fsd.buyerservice.dao.PurchaseHistoryDao;
 import com.fsd.buyerservice.entity.CartItem;
@@ -23,26 +24,24 @@ public class BuyerServiceImpl implements BuyerService {
 
     public static final String ITEM_SERVICE_HOST = "http://localhost:8903";
     private final WebClient webClient;
+    private final ItemClient itemClient;
     private final CartDao cartDao;
     private final PurchaseHistoryDao purchaseHistoryDao;
 
     @Autowired
-    public BuyerServiceImpl(Builder builder, CartDao cartDao,
-            PurchaseHistoryDao purchaseHistoryDao) {
+    public BuyerServiceImpl(Builder builder, ItemClient itemClient,
+        CartDao cartDao,
+        PurchaseHistoryDao purchaseHistoryDao) {
 
         this.webClient = builder.baseUrl(ITEM_SERVICE_HOST).build();
+        this.itemClient = itemClient;
         this.cartDao = cartDao;
         this.purchaseHistoryDao = purchaseHistoryDao;
     }
 
     @Override
     public List<Item> searchItems(String name) {
-        Flux<Item> itemFlux = webClient.get()
-                .uri("/item/search/{name}", name)
-                .retrieve()
-                .bodyToFlux(Item.class);
-
-        return itemFlux.collectList().block();
+        return itemClient.searchItems(name);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class BuyerServiceImpl implements BuyerService {
 
         // 1. check whether the record of specific item associate with specific user exist in cart
         Optional<CartItem> optionalCartItem =
-                cartDao.findCartItemByItemIdAndUserId(item.getId(), userId);
+            cartDao.findCartItemByItemIdAndUserId(item.getId(), userId);
         CartItem cartItem;
 
         if (optionalCartItem.isPresent()) {
@@ -75,14 +74,14 @@ public class BuyerServiceImpl implements BuyerService {
     @Override
     public List<PurchaseHistory> checkout(List<CartItem> cartItems) {
         Flux<Item> itemFlux = webClient.get()
-                .uri("/item/")
-                .retrieve()
-                .bodyToFlux(Item.class);
+            .uri("/item/")
+            .retrieve()
+            .bodyToFlux(Item.class);
         List<Item> items = itemFlux.collectList().block();
         ArrayList<PurchaseHistory> list = new ArrayList<>();
         if (items != null) {
             Map<Integer, Integer> itemSellerIdMap = items.stream()
-                    .collect(Collectors.toMap(Item::getId, Item::getSellerId));
+                .collect(Collectors.toMap(Item::getId, Item::getSellerId));
             cartItems.forEach(cartItem -> {
                 PurchaseHistory purchaseHistory = new PurchaseHistory();
                 purchaseHistory.setBuyerId(cartItem.getUserId());

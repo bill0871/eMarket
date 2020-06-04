@@ -24,9 +24,9 @@ public class BuyerController {
         this.buyerService = buyerService;
     }
 
-    @GetMapping("/search/{name}")
-    public List<Item> searchItems(@PathVariable String name) {
-        return buyerService.searchItems(name);
+    @GetMapping("/search/{itemName}")
+    public List<Item> searchItems(@PathVariable String itemName) {
+        return buyerService.searchItems(itemName);
     }
 
     @PostMapping("/addToCart")
