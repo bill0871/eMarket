@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbAlertModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -26,7 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
         NgbDropdownModule,
         NgbAlertModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        HttpClientJsonpModule
     ],
     providers: [],
     bootstrap: [AppComponent]
