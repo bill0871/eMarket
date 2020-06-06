@@ -15,8 +15,22 @@ spring:
         password: root
     jpa:
         show-sql: true
+    cloud:
+        loadbalancer:
+            ribbon:
+                enabled: false
 
 eureka:
     client:
         service-url:
             defaultZone: http://localhost:8900/eureka/eureka
+        fetch-registry: true
+        register-with-eureka: true
+
+ribbon:
+  eureka:
+      enabled: true
+
+#buyer-service:
+#    ribbon:
+#        listOfServers: http://localhost:8903

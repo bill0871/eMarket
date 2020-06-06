@@ -6,6 +6,9 @@ spring:
     application:
         name: api-gateway
     cloud:
+        loadbalancer:
+          ribbon:
+              enabled: false
         gateway:
             routes:
                 -   id: item-service
@@ -17,6 +20,10 @@ spring:
                     uri: http://localhost:8902/buyer
                     predicates:
                         - Path=/buyer/**
+                -   id: user-service
+                    uri: http://localhost:8901/user
+                    predicates:
+                        - Path=/user/**
 
 eureka:
     client:
