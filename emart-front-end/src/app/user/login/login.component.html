@@ -2,18 +2,21 @@
     <div class="signin-form mb-3">
         <h1>Sign in to e-Mart</h1>
     </div>
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
         <div class="signin-form" style="padding: 0">
-            <!--<app-alert></app-alert>-->
+            <p *ngFor="let alert of alerts">
+                <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+            </p>
         </div>
         <div class="signin-form border rounded-lg mb-3">
             <div class="form-group">
                 <label class="input-label" for="username">Username</label>
-                <input aria-describedby="emailHelp" class="form-control" id="username" type="text">
+                <input ngModel name="username" aria-describedby="emailHelp" class="form-control" id="username"
+                       type="text">
             </div>
             <div class="form-group">
                 <label class="input-label" for="password">Password</label>
-                <input class="form-control" id="password" type="password">
+                <input ngModel name="password" class="form-control" id="password" type="password">
             </div>
             <button class="btn btn-primary btn-block" type="submit">Sign in</button>
         </div>
