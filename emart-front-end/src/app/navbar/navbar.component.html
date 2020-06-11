@@ -12,8 +12,13 @@
                 <a *ngIf="!isSignin" class="nav-link" routerLink="/login">Sign in</a>
                 <a *ngIf="isSignin" class="nav-link" routerLink="/login">Sign out</a>
             </li>
-            <li class="nav-item">
-                <a *ngIf="!isSignin" class="nav-link" routerLink="/signup">Sign up</a>
+            <li class="nav-item" ngbDropdown>
+                <a (click)="false" *ngIf="!isSignin" class="nav-link" href ngbDropdownToggle>Sign
+                    up</a>
+                <div ngbDropdownMenu>
+                    <button ngbDropdownItem routerLink="/signup/buyer">Buyer</button>
+                    <button ngbDropdownItem routerLink="/signup/seller">Seller</button>
+                </div>
             </li>
             <li class="nav-item" ngbDropdown>
                 <a (click)="false" class="nav-link" href ngbDropdownToggle>Dropdown</a>

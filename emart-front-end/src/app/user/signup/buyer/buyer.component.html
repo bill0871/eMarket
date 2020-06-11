@@ -1,0 +1,79 @@
+<div class="container-md mb-3">
+    <div class="signin-form mb-3">
+        <h1>Create your account</h1>
+    </div>
+
+    <div class="signin-form text-center">
+        Want to be a Seller? <a routerLink="/signup/seller">Sign up as seller.</a>
+    </div>
+
+    <form (ngSubmit)="signup()" [formGroup]="registerForm">
+
+        <div class="signin-form border rounded-lg mb-3">
+
+            <!-- Username -->
+            <div class="form-group">
+                <label class="required input-label" for="sign-name">Username</label>
+                <input aria-describedby="username" autocomplete="off" class="form-control" formControlName="username" id="sign-name" name="username"
+                       type="text">
+            </div>
+            <!-- Username validation-->
+            <div [hidden]="registerForm.get('username').valid || registerForm.get('username').untouched"
+                 class="form-group">
+                <p [hidden]="!registerForm.hasError('required','username')" class="error-info">Username cannot be empty!</p>
+                <p [hidden]="!registerForm.hasError('minlength','username') && !registerForm.hasError('pattern','username') &&
+                !registerForm.hasError('maxlength','username')" class="error-info">
+                    Username must contain 6 - 15 alphanumeric characters.
+                </p>
+            </div>
+
+            <!-- Password group -->
+            <div class="form-group">
+                <label class="required input-label" for="password">Password</label>
+                <input class="form-control" formControlName="password" id="password" type="password"/>
+            </div>
+            <!-- Password validation -->
+            <div [hidden]="registerForm.get('password').valid || registerForm.get('password').untouched"
+                 class="form-group">
+                <p [hidden]="!registerForm.hasError('required', 'password')" class="error-info">Password cannot be empty!</p>
+                <p [hidden]="!registerForm.hasError('minlength', 'password') && !registerForm.hasError('pattern' ,'password') &&
+                     !registerForm.hasError('maxlength', 'password')" class="error-info">
+                    Password must contain 6 - 15 alphanumeric characters.
+                </p>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label class="required input-label" for="email">Email</label>
+                <input autocomplete="off" class="form-control" formControlName="email" id="email" type="email">
+            </div>
+            <!-- Email Validation -->
+            <div [hidden]="registerForm.get('email').valid || registerForm.get('email').untouched"
+                 class="form-group">
+                <p [hidden]="!registerForm.hasError('required', 'email')" class="error-info">Email cannot be empty!</p>
+                <p [hidden]="!registerForm.hasError('pattern' ,'email')" class="error-info">Email format is not correct.</p>
+            </div>
+
+            <!-- Mobile -->
+            <div class="form-group">
+                <label class="required input-label" for="mobile">Mobile</label>
+                <input autocomplete="off" class="form-control" formControlName="mobile" id="mobile" type="tel">
+            </div>
+            <!-- Mobile Validation -->
+            <div [hidden]="registerForm.get('mobile').valid || registerForm.get('mobile').untouched"
+                 class="form-group">
+                <p [hidden]="!registerForm.hasError('required', 'mobile')" class="error-info">Mobile cannot be empty!</p>
+                <p [hidden]="!registerForm.hasError('pattern', 'mobile')" class="error-info">Mobile can only contain number.</p>
+            </div>
+
+            <!-- Create account link-->
+            <div class="form-group">
+                <button [disabled]="!registerForm.valid" class="btn btn-primary btn-block" type="submit">Create account</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="signin-form border rounded-lg login">
+        Already got an account? <a routerLink="/login">Sign in.</a>
+    </div>
+</div>

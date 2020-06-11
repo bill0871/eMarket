@@ -4,5 +4,11 @@
     "^/item": "",
     "logLevel": "debug",
     "secure": false
+  },
+  "/user": {
+    "target": "http://localhost:8080",
+    "^/user": "",
+    "logLevel": "debug",
+    "secure": false
   }
 }
