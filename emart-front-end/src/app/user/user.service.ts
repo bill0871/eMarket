@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Buyer } from "./model/buyer";
+import { Seller } from "./model/seller";
 
 @Injectable({
     providedIn: 'root'
@@ -16,5 +17,13 @@ export class UserService {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
             observe: 'response'
         });
+    }
+
+    registerSeller(seller: Seller) {
+        return this.httpClient.post('/user/signup/seller', seller, {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+            observe: 'response'
+        });
+
     }
 }
