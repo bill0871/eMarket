@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { UserService } from "../user.service";
 
 interface Alert {
     type: string;
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
     alerts: Alert[];
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private userService: UserService) {
     }
 
     ngOnInit(): void {
@@ -23,20 +24,19 @@ export class LoginComponent implements OnInit {
 
     onSubmit(value: any) {
         if (this.validateInput(value)) {
-            // this.userService.postSignIn(value).subscribe(
-            //     data => {
-            //         console.log(JSON.stringify(data));
-            //         const info: any = data;
-            //         if (200 === info.code) {
-            //             console.log('登录成功，调转详情页');
-            //             sessionStorage.setItem('token', info.result.token)
-            //             this.router.navigate(['/home']);
-            //         } else {
-            //             console.log('登录失败，弹出MSG');
-            //             this.alerts.push({ type: 'danger', message: 'username or password error!' });
-            //         }
-            //     }
-            // );
+            this.userService.login(value).subscribe(
+                res => {
+                    console.log(JSON.stringify(res));
+                    if (200 === res.status) {
+                        console.log('登录成功，调转详情页');
+                        // sessionStorage.setItem('token', res.result.token)
+                        this.router.navigate(['/home']);
+                    } else {
+                        console.log('登录失败，弹出MSG');
+                        this.alerts.push({ type: 'danger', message: 'username or password error!' });
+                    }
+                }
+            );
         }
     }
 

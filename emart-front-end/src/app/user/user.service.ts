@@ -24,6 +24,13 @@ export class UserService {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
             observe: 'response'
         });
+    }
 
+
+    login(user) {
+        return this.httpClient.post('/user/login/buyer', JSON.stringify(user), {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+            observe: 'response'
+        });
     }
 }
