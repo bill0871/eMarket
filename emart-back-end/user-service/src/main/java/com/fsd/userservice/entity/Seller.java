@@ -25,17 +25,17 @@ public class Seller implements Serializable {
 
     private String password;
 
+    private String email;
+
+    private String individualName;
+
     private String companyName;
-
-    private String gstin;
-
-    private String briefCompany;
 
     private String postalAddress;
 
-    private String website;
+    private String gstin;
 
-    private String email;
+    private String bankDetail;
 
     private Date createTime;
 

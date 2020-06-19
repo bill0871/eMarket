@@ -5,6 +5,7 @@ import com.fsd.userservice.entity.Seller;
 import com.fsd.userservice.service.SignUpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,4 +37,11 @@ public class UserSignUpController {
     public Seller registerSeller(@RequestBody Seller seller) {
         return sellerSignUpService.signUp(seller);
     }
+
+    @GetMapping("/buyer")
+    public String hello() {
+        return "hello";
+    }
+
+
 }

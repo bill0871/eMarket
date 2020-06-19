@@ -29,7 +29,8 @@ public class UserSignInController {
 
     @PostMapping("/buyer")
     public Buyer signInBuyer(@RequestBody Buyer buyer) {
-        return buyerSignInService.signIn(buyer);
+        Buyer user = buyerSignInService.signIn(buyer);
+        return user;
     }
 
     @PostMapping("/seller")
