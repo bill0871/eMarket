@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Buyer } from "./model/buyer";
-import { Seller } from "./model/seller";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Buyer } from './model/buyer';
+import { Seller } from './model/seller';
 
 @Injectable({
     providedIn: 'root'

@@ -2,11 +2,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from "./home/home.component";
-import { CartComponent } from "./cart/cart.component";
-import { LoginComponent } from "./user/login/login.component";
-import { BuyerComponent } from "./user/signup/buyer/buyer.component";
-import { SellerComponent } from "./user/signup/seller/seller.component";
+import { HomeComponent } from './home/home.component';
+import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './user/login/login.component';
+import { BuyerComponent } from './user/signup/buyer/buyer.component';
+import { SellerComponent } from './user/signup/seller/seller.component';
 
 
 const routes: Routes = [
