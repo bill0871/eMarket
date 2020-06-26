@@ -10,7 +10,7 @@ pipeline {
       stage('build') {
          steps {
             sh label: '', script: '''cd emart-back-end
-mvn clean install -Dmaven.test.skip=true'''
+            mvn clean install -Dmaven.test.skip=true'''
          }
       }
       stage('deploy') {
