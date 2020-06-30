@@ -4,4 +4,5 @@ import com.fsd.userservice.entity.Buyer;
 
 public interface BuyerSignUpDao extends SignUpDao<Buyer> {
 
+    Buyer findByUsername(String username);
 }

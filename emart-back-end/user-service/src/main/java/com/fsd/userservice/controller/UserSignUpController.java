@@ -1,5 +1,6 @@
 package com.fsd.userservice.controller;
 
+import com.fsd.commonmodel.model.ServerResponse;
 import com.fsd.userservice.entity.Buyer;
 import com.fsd.userservice.entity.Seller;
 import com.fsd.userservice.service.SignUpService;
@@ -22,15 +23,24 @@ public class UserSignUpController {
 
     @Autowired
     public UserSignUpController(SignUpService<Buyer> buyerSignUpService,
-            SignUpService<Seller> sellerSignUpService) {
+        SignUpService<Seller> sellerSignUpService) {
 
         this.buyerSignUpService = buyerSignUpService;
         this.sellerSignUpService = sellerSignUpService;
     }
 
     @PostMapping("/buyer")
-    public Buyer registerBuyer(@RequestBody Buyer buyer) {
-        return buyerSignUpService.signUp(buyer);
+    public ServerResponse<Buyer> registerBuyer(@RequestBody Buyer buyer) {
+        Buyer result = buyerSignUpService.find(buyer);
+        if (result == null) {
+            Buyer signUpBuyer = buyerSignUpService.signUp(buyer);
+            return ServerResponse.successWithDefaultCode(signUpBuyer);
+        }
+        result.setPassword(null);
+        result.setMobile(null);
+        result.setEmail(null);
+        result.setCreateTime(null);
+        return ServerResponse.errorWithMsg(500005, "The user has already exist!", result);
     }
 
     @PostMapping("/seller")

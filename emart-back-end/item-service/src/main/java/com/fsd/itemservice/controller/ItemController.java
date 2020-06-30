@@ -1,5 +1,6 @@
 package com.fsd.itemservice.controller;
 
+import com.fsd.commonmodel.model.ServerResponse;
 import com.fsd.itemservice.entity.Item;
 import com.fsd.itemservice.service.ItemService;
 import java.util.List;
@@ -26,9 +27,10 @@ public class ItemController {
     }
 
     @GetMapping("/getAllItems")
-    public List<Item> getAllItems() {
+    public ServerResponse<List<Item>> getAllItems() {
         log.debug("...getAllItems...");
-        return itemService.findAll();
+        List<Item> items = itemService.findAll();
+        return ServerResponse.successWithDefaultCode(items);
     }
 
     @GetMapping("/{id}")

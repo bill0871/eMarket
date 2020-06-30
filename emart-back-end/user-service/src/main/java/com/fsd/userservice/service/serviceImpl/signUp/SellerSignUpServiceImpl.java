@@ -26,4 +26,9 @@ public class SellerSignUpServiceImpl implements SignUpService<Seller> {
         user.setCreateTime(new Date());
         return sellerSignUpDao.save(user);
     }
+
+    @Override
+    public Seller find(Seller user) {
+        return null;
+    }
 }

@@ -13,6 +13,11 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.fsd</groupId>
+            <artifactId>common-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- jwt -->
         <dependency>
             <artifactId>jjwt-api</artifactId>
