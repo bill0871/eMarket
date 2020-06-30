@@ -76,6 +76,7 @@
         <module>seller-service</module>
         <module>eureka-server</module>
         <module>api-gateway</module>
+        <module>common-model</module>
     </modules>
     <name>emart-back-end</name>
 
@@ -97,4 +98,17 @@
 
     <version>0.0.1-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>Maven Aliyun Mirror</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
