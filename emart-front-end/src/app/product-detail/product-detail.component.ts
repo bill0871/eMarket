@@ -9,21 +9,19 @@ import { Product, ProductsService } from '../services/products.service';
 })
 export class ProductDetailComponent implements OnInit {
     product: Product;
-    errorMessage = 'error';
 
     constructor(private actRoute: ActivatedRoute, private productsService: ProductsService) {
-        // this.productId = actRoute.snapshot.params.id;
     }
 
     ngOnInit(): void {
         const productId = this.actRoute.snapshot.paramMap.get('id');
-        this.getProduct(Number(productId));
+        this.getProduct(+productId);
     }
 
     getProduct(id: number) {
-        this.productsService.getProduct(id).subscribe({
-            next: product => this.product = product,
-            error: err => this.errorMessage = err
+        this.productsService.getProducts().subscribe(res => {
+            const data: any = res;
+            this.product = data.data.find(o => id === o.id);
         });
     }
 }

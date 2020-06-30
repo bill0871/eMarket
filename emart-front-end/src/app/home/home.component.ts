@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
     }
 
     getProducts(): void {
-        this.productsService.getProducts().subscribe(res => this.products = res);
+        this.productsService.getProducts().subscribe(data => {
+            const res: any = data;
+            this.products = res.data;
+        });
     }
 }

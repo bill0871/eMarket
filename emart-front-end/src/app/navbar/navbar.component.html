@@ -10,7 +10,7 @@
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <a *ngIf="!isSignin" class="nav-link" routerLink="/login">Sign in</a>
-                <a *ngIf="isSignin" class="nav-link" routerLink="/login">Sign out</a>
+                <a *ngIf="isSignin" class="nav-link" routerLink (click)="signOut()">Sign out</a>
             </li>
             <li class="nav-item" ngbDropdown>
                 <a (click)="false" *ngIf="!isSignin" class="nav-link" href ngbDropdownToggle>Sign
@@ -21,7 +21,7 @@
                 </div>
             </li>
             <li class="nav-item" ngbDropdown>
-                <a (click)="false" class="nav-link" href ngbDropdownToggle>Dropdown</a>
+                <a (click)="false" class="nav-link" href ngbDropdownToggle>{{username}}</a>
                 <div ngbDropdownMenu>
                     <a ngbDropdownItem routerLink="/order">My orders</a>
                     <button ngbDropdownItem routerLink="/item-adding">Add item</button>
@@ -32,14 +32,6 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/cart">Cart</a>
             </li>
-            <!--<li class="nav-item">-->
-            <!--    <form class="form-inline">-->
-            <!--        <button aria-controls="collapseExample" aria-expanded="false"-->
-            <!--                class="btn btn-outline-success ml-1 mr-1"-->
-            <!--                data-target="#collapseExample" data-toggle="collapse" type="button">Search-->
-            <!--        </button>-->
-            <!--    </form>-->
-            <!--</li>-->
         </ul>
 
     </div>

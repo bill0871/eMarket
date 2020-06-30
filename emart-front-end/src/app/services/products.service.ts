@@ -23,8 +23,8 @@ export class ProductsService {
     constructor(private httpClient: HttpClient) {
     }
 
-    getProducts(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>('/item/getAllItems');
+    getProducts() {
+        return this.httpClient.get('/item/getAllItems');
     }
 
     getProduct(id: number): Observable<Product> {

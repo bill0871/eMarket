@@ -3,6 +3,12 @@
         <h1>Create your account</h1>
     </div>
 
+    <div class="signin-form" style="padding: 0">
+        <p *ngFor="let alert of alerts">
+            <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+        </p>
+    </div>
+
     <div class="signin-form text-center">
         Want to be a Seller? <a routerLink="/signup/seller">Sign up as seller.</a>
     </div>
